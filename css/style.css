@@ -987,20 +987,6 @@ header .mega-menu .links li a i {
   padding-block: var(--padding-section);
   position: relative;
 }
-.events .container > img:first-of-type {
-  position: absolute;
-  right: 0;
-}
-.events .container > img:last-of-type {
-  position: absolute;
-  left: 0;
-  bottom: 18%;
-}
-@media (max-width: 991px) {
-  .events .container > img {
-    opacity: 0.4;
-  }
-}
 .events .events-content main {
   display: flex;
   align-items: center;
@@ -1138,22 +1124,11 @@ header .mega-menu .links li a i {
   background-color: var(--section-color);
   position: relative;
 }
-.pricing .container > img:first-of-type {
-  position: absolute;
-  right: 0;
-  top: 15%;
-  z-index: 1;
-}
-.pricing .container > img:last-of-type {
-  position: absolute;
-  left: 0;
-  bottom: 15%;
-}
 .pricing .pricing-content {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
   position: relative;
   z-index: 2;
 }
@@ -1189,49 +1164,34 @@ header .mega-menu .links li a i {
 .pricing .pricing-content .card:hover::after {
   width: 100%;
 }
-.pricing .pricing-content .card:nth-child(2) {
-  transform: translateY(-20px);
-  position: relative;
-}
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
   .pricing .pricing-content .card:nth-child(2) {
-    transform: translateY(0);
+    top: -20px;
   }
 }
-.pricing .pricing-content .card:nth-child(2)::before {
-  content: "Most Popular";
-  width: 120px;
-  height: 30px;
+.pricing .pricing-content .card label {
+  writing-mode: vertical-lr;
+  background-color: var(--main-color-alt);
+  padding: 10px 10px 35px;
+  font-weight: 700;
+  font-size: 17px;
+  color: #fff;
   position: absolute;
-  top: 50px;
-  left: 68.6%;
-  background-color: var(--main-color);
-  transform: rotate(90deg);
-  padding: 10px 10px 0;
-  color: white;
-  font-weight: bold;
+  top: 0;
+  right: 15px;
 }
-@media (min-width: 320px) and (max-width: 374px) {
-  .pricing .pricing-content .card:nth-child(2)::before {
-    left: 62.2%;
-  }
-}
-@media (min-width: 375px) and (max-width: 424px) {
-  .pricing .pricing-content .card:nth-child(2)::before {
-    left: 68.2%;
-  }
-}
-.pricing .pricing-content .card:nth-child(2)::after {
+.pricing .pricing-content .card label::after {
   content: "";
-  width: 0;
-  height: 0;
-  background-color: transparent;
-  border-width: 20px;
-  border-style: solid;
-  border-color: transparent transparent white transparent;
   position: absolute;
-  top: 100px;
-  right: 20px;
+  bottom: 0;
+  right: 0;
+  border-width: 20px;
+  border-color: transparent transparent #fff transparent;
+  border-style: solid;
+}
+.pricing .pricing-content .card:hover label::after {
+  border-color: transparent transparent #f4f4f4 transparent;
+  transition-delay: 0.2s;
 }
 .pricing .pricing-content .card section {
   margin-bottom: 20px;
