@@ -1398,43 +1398,55 @@ header .mega-menu .links li a i {
 /* End Stats */
 /* Start Discount */
 .discount {
+  min-height: 100vh;
   position: relative;
-}
-.discount .container {
-  margin: 0;
-  padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+}
+@media (max-width: 1023px) {
+  .discount {
+    flex-direction: column;
+  }
 }
 .discount .one {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: white;
+  flex-basis: 50%;
+  color: #fff;
+  padding: 40px 10px;
   background-color: var(--main-color-alt);
-  padding: 70px 70px 40px;
+  position: relative;
   animation: change-bg 10s linear infinite;
+  z-index: 1;
+}
+.discount .one::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(23 135 224 / 0.97);
+  z-index: -1;
 }
 @keyframes change-bg {
   0%,
   100% {
-    background-image:
-      linear-gradient(rgba(23, 135, 224, 0.97)),
-      url(../images/discount-background1.jpg);
-    background-size: cover;
+    background-image: url(../images/discount-background1.jpg);
   }
   50% {
-    background-image:
-      linear-gradient(rgba(23, 135, 224, 0.97)),
-      url(../images/discount-background2.jpg);
-    background-size: cover;
+    background-image: url(../images/discount-background2.jpg);
   }
 }
 .discount .one h2 {
-  font-size: 2em;
+  font-size: 40px;
+  letter-spacing: -2px;
   margin-bottom: 30px;
 }
 .discount .one p {
+  width: 80%;
   line-height: 1.8;
   font-size: 18px;
   margin-bottom: 40px;
@@ -1443,30 +1455,36 @@ header .mega-menu .links li a i {
   width: 300px;
   margin-inline: auto;
 }
+.discount .one .image img {
+  max-width: 100%;
+}
 @media (max-width: 767px) {
+  .discount .one h2 {
+    font-size: 35px;
+  }
+  .discount .one p {
+    width: 100%;
+  }
   .discount .one .image {
     width: 200px;
   }
-}
-.discount .one .image img {
-  max-width: 100%;
 }
 .discount .two {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
-  padding: 70px 70px 40px;
+  justify-content: center;
+  flex-basis: 50%;
+  padding: 40px 10px;
 }
 @media (max-width: 767px) {
   .discount .one,
   .discount .two {
-    max-width: 100%;
-    padding: 40px 20px;
+    flex-basis: 100%;
   }
 }
 .discount .two h2 {
-  font-size: 2.5em;
+  font-size: 40px;
   margin-bottom: 30px;
 }
 @media (max-width: 767px) {
@@ -1505,7 +1523,7 @@ header .mega-menu .links li a i {
   .discount .two form input,
   .discount .two form textarea,
   .discount .two form button {
-    width: 300px;
+    width: 280px;
   }
 }
 /* End Discount */
