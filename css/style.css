@@ -98,6 +98,18 @@
   z-index: 1;
 }
 /* End Zig-Zag */
+/* Start Dots Image */
+.dots.up {
+  position: absolute;
+  top: 150px;
+  right: 0;
+}
+.dots.down {
+  position: absolute;
+  bottom: 150px;
+  left: 0;
+}
+/* End Dots Image */
 /* End Components */
 /* Start Global Rules */
 * {
@@ -1580,7 +1592,7 @@ footer .footer-content .one .social-media a:hover:nth-child(2) {
   background-color: black;
 }
 footer .footer-content .one .social-media a:hover:last-child {
-  background-color: red;
+  background-color: #f00;
 }
 footer .footer-content .one p {
   color: #b9b9b9;
